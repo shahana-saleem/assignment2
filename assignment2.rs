@@ -1,29 +1,62 @@
 //Q1.Calculator.
 // use std::io;
+// #[allow(unused_variables)]
+
 // fn main() {
-//      println!("casio simple calculator");
-//      while true {
-//          let mut input = String ::new();
-//       io::stdin().read_line(& mut input);
-//       let mut item = vec![];
-//       for items in input.split_whitespace() {
-        
-//           item.push(items);
+//   let mut input = String::new(); 
+//   io::stdin().read_line(&mut input).expect("unable to read line");
+//   let x = input.trim();
+//   let value:String = x.split_whitespace().collect(); // removes white spaces
+//   let mut items: Vec<_> = value.split("").collect(); // splits String to Vector 
+//   items.remove(0); // removes starting index containing white space
+//   items.remove(items.len() - 1);  // removes ending index containing white space
+
+//   let mut number = String::new();
+//   let mut new_items = vec![];
+
+//   for s in items {
+//       if s == "+" {
+//           // if found an operator, push and clear the current operand and operator
+//           new_items.push(number.drain(..).collect());
+//           new_items.push(s.to_owned());
+//       } else {
+//           number.push_str(s);
 //       }
-//       let x :f32 = item[0].parse().unwrap();
-//       let y :f32 = item[2].parse().unwrap();
-//       if x == 0.0 { println!("Bye Now,Calculator ending");
-//           break;}
-     
-     
-//       if item[1] == "+" { println!("> {}",x+y);}
-//       else if item[1] == "-" { println!("> {}",x-y);}
-//       else  if item[1] == "*" { println!("> {}",x*y);}
-//        else  if item[1] == "/" { println!("> {}",x/y);}
-//        else if item[1] == "^" {println!("> {}",x.powf(y as f32));}
-//        else { println!("> Incorrect Operator");}
-//     }
 //   }
+
+//   if !number.is_empty() {
+//       new_items.push(number);
+//   }
+
+//   let f_operand:f32 = new_items[0].parse().unwrap(); // parse String to Integer
+//   let l_operand:f32 = new_items[2].parse().unwrap(); // parse String to Integer
+//   let operator = &new_items[1];
+
+
+//   if operator == "+" {
+//       println!("{}",f_operand + l_operand);
+//   }
+//   else if operator == "-" {
+//       println!("{}",f_operand - l_operand);
+//   }
+//   else if operator == "*" {
+//       println!("{}",f_operand * l_operand);
+//   }
+//   else if operator == "/" {
+//       println!("{}",f_operand / l_operand);
+//   }
+//   else if operator == "-" {
+//       println!("10 - 5 = {}",10-5);
+//   }
+//   else if operator == "^" {
+//       let mut exp = f_operand;
+//       for i in 1..(l_operand as i32) {
+//           exp = exp * f_operand;   
+//       }
+//       println!("{}",exp);
+//   }
+
+// }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Q2.Complete the file closures_properties.rs in drive.
 // fn main() {
